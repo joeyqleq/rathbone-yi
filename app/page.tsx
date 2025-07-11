@@ -1,8 +1,7 @@
 import Head from "next/head"
-import dynamic from "next/dynamic"
 import { Suspense } from "react"
 
-const RathboneShrine = dynamic(() => import("@/components/RathboneShrine"), { ssr: false })
+import RathboneShrineClient from "@/components/RathboneShrineClient"
 
 export default function Home() {
   return (
@@ -24,7 +23,7 @@ export default function Home() {
             </div>
           }
         >
-          <RathboneShrine />
+          <RathboneShrineClient />
         </Suspense>
       </main>
     </>
