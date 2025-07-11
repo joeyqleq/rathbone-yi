@@ -1,10 +1,12 @@
 import type { Metadata } from 'next'
 import './globals.css'
 
-export const metadata: Metadata = {
-  title: 'v0 App',
-  description: 'Created with v0',
-  generator: 'v0.dev',
+export const metadata = {
+  title: "All Hail Lord Rath of the bone",
+  description: "A shrine forged in pixels and vengeance.",
+  generator: 'All Hail Lord Rath of the bone',
+}
+
 }
 
 export default function RootLayout({
