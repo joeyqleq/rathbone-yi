@@ -1,0 +1,119 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 255, 65;
+  --background-start-rgb: 0, 0, 0;
+  --background-end-rgb: 0, 20, 0;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(135deg, rgb(var(--background-start-rgb)) 0%, rgb(var(--background-end-rgb)) 100%);
+  overflow: hidden;
+  font-family: "Courier New", monospace;
+}
+
+* {
+  backface-visibility: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.glitch-text {
+  position: relative;
+  animation: glitch 2s infinite;
+}
+
+@keyframes glitch {
+  0%,
+  100% {
+    text-shadow: 0 0 10px #00ff41, 0 0 20px #00ff41, 0 0 30px #00ff41;
+  }
+  25% {
+    text-shadow: -2px 0 #ff0000, 2px 0 #00ffff;
+  }
+  50% {
+    text-shadow: 2px 0 #ff0000, -2px 0 #00ffff;
+  }
+  75% {
+    text-shadow: 0 0 10px #00ff41, 0 0 20px #00ff41, 0 0 30px #00ff41;
+  }
+}
+
+/* Enhanced scanlines animation */
+@keyframes scanlines {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(4px);
+  }
+}
+
+/* Warp speed effect */
+@keyframes warp-entrance {
+  0% {
+    transform: scale(0.1) translateZ(-1000px);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1) translateZ(0);
+    opacity: 1;
+  }
+}
+
+.warp-entrance {
+  animation: warp-entrance 1.4s ease-out;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #00ff41;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #00cc33;
+}
+
+/* Terminal cursor */
+@keyframes cursor-blink {
+  0%,
+  50% {
+    opacity: 1;
+  }
+  51%,
+  100% {
+    opacity: 0;
+  }
+}
+
+.terminal-cursor {
+  animation: cursor-blink 1s infinite;
+}
+
+/* Responsive text scaling */
+@media (max-width: 640px) {
+  .glitch-text {
+    font-size: clamp(1rem, 4vw, 2rem);
+  }
+}
+
+@media (max-width: 768px) {
+  .glitch-text {
+    font-size: clamp(1.5rem, 5vw, 2.5rem);
+  }
+}
