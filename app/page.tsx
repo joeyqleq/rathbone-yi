@@ -1,20 +1,12 @@
-import Head from "next/head"
+// app/page.tsx
 import { Suspense } from "react"
-
 import RathboneShrineClient from "@/components/RathboneShrineClient"
+import TrackingScript from "@/components/TrackingScript"
 
 export default function Home() {
   return (
     <>
-      <Head>
-        <script
-          async
-          defer
-          src="https://tianji.motherfucking.fun/tracker.js"
-          data-website-id="cmcsaucy804wirwk7iebqpn9g"
-        ></script>
-      </Head>
-
+      <TrackingScript />
       <main className="relative min-h-screen bg-black overflow-hidden">
         <Suspense
           fallback={
